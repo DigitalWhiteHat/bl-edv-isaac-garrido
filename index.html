@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Guía quincenal de SEO para Isaac Garrido en Bloomberg Línea: qué le sirvió, qué no, qué se le recomienda y a qué estar pendiente. Se actualiza cada domingo.">
+<title>Qué le rinde a Isaac Garrido</title>
+<style>
+  /* Identidad Bloomberg Línea: negro, blanco y el verde de «Línea» (#36BF58); titulares en grotesca tipo Neue Haas, texto en Lora */
+  :root {
+    color-scheme: light;
+    --bg: #FFFFFF;
+    --surface: #FFFFFF;
+    --ink: #191919;
+    --ink-2: #3D3D3D;
+    --muted: #6B6B6B;
+    --rule: #DADADA;
+    --rule-strong: #BDBDBD;
+    --neutral-bg: #F4F4F4;
+    --accent: #36BF58;
+    --accent-ink: #15803D;
+    --accent-track: #E3F4E7;
+    --notes-bar: #191919;
+    --c-prop: #36BF58;
+    --c-rev: #0F6B34;
+    --c-rest: #D0D0D0;
+    --good: #15803D;
+    --good-bg: #E8F6EC;
+    --warn: #A15300;
+    --warn-bg: #FFF1E0;
+    --bad: #C0341F;
+    --bad-bg: #FDECE8;
+    --bar-bg: #000000;
+    --bar-ink: #FFFFFF;
+    --bar-muted: #BDBDBD;
+    --bar-accent: #36BF58;
+    --bar-rule: #2A2A2A;
+    --sans: "Neue Haas Grotesk Display Pro", "neue-haas-grotesk-display", "Helvetica Neue", "Inter Tight", Helvetica, Arial, sans-serif;
+    --serif: "Lora", Georgia, "Times New Roman", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --ink: #F2F2F2;
+      --ink-2: #CFCFCF;
+      --muted: #9A9A9A;
+      --rule: #2A2A2A;
+      --rule-strong: #4A4A4A;
+      --neutral-bg: #1C1C1C;
+      --accent: #30AF50;
+      --accent-ink: #4CD472;
+      --accent-track: #13261A;
+      --notes-bar: #CFCFCF;
+      --c-prop: #30AF50;
+      --c-rev: #14773A;
+      --c-rest: #3A3A3A;
+      --good: #4CD472;
+      --good-bg: #0F2A18;
+      --warn: #FFB060;
+      --warn-bg: #2E2110;
+      --bad: #FF7A66;
+      --bad-bg: #2E1512;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0A0A0A;
+    --surface: #141414;
+    --ink: #F2F2F2;
+    --ink-2: #CFCFCF;
+    --muted: #9A9A9A;
+    --rule: #2A2A2A;
+    --rule-strong: #4A4A4A;
+    --neutral-bg: #1C1C1C;
+    --accent: #30AF50;
+    --accent-ink: #4CD472;
+    --accent-track: #13261A;
+    --notes-bar: #CFCFCF;
+    --c-prop: #30AF50;
+    --c-rev: #14773A;
+    --c-rest: #3A3A3A;
+    --good: #4CD472;
+    --good-bg: #0F2A18;
+    --warn: #FFB060;
+    --warn-bg: #2E2110;
+    --bad: #FF7A66;
+    --bad-bg: #2E1512;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-inline: clamp(16px, 4vw, 44px);
+    padding-block: clamp(28px, 5vw, 56px) 72px;
+  }
+  a { color: var(--accent-ink); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  p { margin: 0; max-width: 68ch; }
+  strong { font-weight: 600; color: var(--ink); }
+
+  /* Masthead */
+  .mast {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: clamp(24px, 5vw, 64px);
+    align-items: end;
+  }
+  .kicker {
+    font: 600 12px/1.2 var(--sans);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: var(--sans);
+    font-weight: 780;
+    font-size: clamp(44px, 7vw, 76px);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  .lede {
+    font-size: clamp(18px, 2vw, 20.5px);
+    line-height: 1.5;
+    color: var(--ink-2);
+    max-width: 46ch;
+  }
+  .spec {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 2px solid var(--ink);
+  }
+  .spec > div { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+  .spec > div:nth-child(odd) { padding-right: 18px; }
+  .spec dt {
+    font: 600 11px/1.3 var(--sans);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .spec dd { margin: 5px 0 0; font: 650 21px/1.15 var(--sans); color: var(--ink); }
+  .spec dd small { display: block; margin-top: 3px; font: 400 13px/1.35 var(--sans); color: var(--muted); }
+  .bezel {
+    height: 14px;
+    margin-top: 26px;
+    background:
+      repeating-linear-gradient(90deg, var(--accent) 0 2px, transparent 2px 60px) left bottom / 100% 14px no-repeat,
+      repeating-linear-gradient(90deg, var(--rule-strong) 0 1px, transparent 1px 12px) left bottom / 100% 7px no-repeat;
+  }
+
+  /* Sections */
+  section { margin-top: clamp(48px, 7vw, 76px); }
+  .sec-head { display: grid; gap: 10px; margin-bottom: 22px; }
+  .eyebrow {
+    font: 600 11.5px/1.2 var(--sans);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  h2 {
+    font-family: var(--sans);
+    font-weight: 740;
+    font-size: clamp(28px, 3.6vw, 38px);
+    line-height: 1.02;
+    margin: 0;
+    text-wrap: balance;
+    max-width: 24ch;
+  }
+  .sec-head p { color: var(--ink-2); }
+  .stack { display: grid; gap: 14px; }
+  .note { font: 400 14px/1.5 var(--sans); color: var(--muted); max-width: 90ch; margin-top: 14px; }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; border-top: 2px solid var(--ink); }
+  table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 14.5px; }
+  .t-topics { min-width: 900px; }
+  .t-hooks { min-width: 680px; }
+  .t-mix { min-width: 760px; }
+  .t-ever { min-width: 760px; }
+  .t-gsc { min-width: 720px; }
+  thead th {
+    font: 600 11px/1.3 var(--sans);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 12px 14px 10px 0;
+    border-bottom: 1px solid var(--rule-strong);
+    vertical-align: bottom;
+  }
+  tbody th, tbody td {
+    padding: 13px 14px 13px 0;
+    border-bottom: 1px solid var(--rule);
+    text-align: left;
+    vertical-align: middle;
+  }
+  tbody th { font-weight: 650; color: var(--ink); }
+  tbody th .how { display: block; margin-top: 3px; font: 400 13.5px/1.4 var(--serif); color: var(--muted); max-width: 42ch; }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.chan { color: var(--ink-2); white-space: nowrap; }
+  td.idx { color: var(--ink-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  td.idx b { font-weight: 650; color: var(--ink); }
+  .star { color: var(--muted); font-weight: 400; }
+  tr.ref-row th, tr.ref-row td { color: var(--muted); background: var(--neutral-bg); }
+  tr.ref-row th { padding-left: 10px; }
+  .title-cell { font-weight: 500; color: var(--ink); max-width: 46ch; }
+
+  .barline { display: grid; grid-template-columns: minmax(140px, 1fr) 54px; align-items: center; gap: 10px; }
+  .bar { position: relative; height: 12px; background: var(--accent-track); }
+  .bar .fill { position: absolute; inset: 0 auto 0 0; width: var(--w); background: var(--accent); border-radius: 0 4px 4px 0; }
+  .bar .mid { position: absolute; left: var(--mid); top: -5px; bottom: -5px; width: 1px; background: var(--ink); }
+  .barline .val { font-variant-numeric: tabular-nums; text-align: right; font-weight: 600; }
+  .pair { display: grid; gap: 5px; }
+  .pair .row { display: grid; grid-template-columns: minmax(140px, 1fr) 48px; align-items: center; gap: 10px; }
+  .pair .b { height: 9px; background: transparent; position: relative; }
+  .pair .b span { position: absolute; inset: 0 auto 0 0; width: var(--w); border-radius: 0 4px 4px 0; }
+  .pair .notes span { background: var(--notes-bar); }
+  .pair .views span { background: var(--accent); }
+  .pair .v { font-variant-numeric: tabular-nums; text-align: right; font-size: 13px; color: var(--ink-2); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font: 500 13px/1.3 var(--sans); color: var(--ink-2); margin-bottom: 12px; }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .legend i { display: inline-block; width: 18px; height: 9px; border-radius: 0 3px 3px 0; }
+  .legend .k-notes { background: var(--notes-bar); }
+  .legend .k-views { background: var(--accent); }
+  .legend .k-mid { width: 1px; height: 14px; background: var(--ink); border-radius: 0; }
+
+  /* Verdict chips */
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font: 650 12.5px/1 var(--sans);
+    padding: 6px 10px 6px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .chip svg { width: 9px; height: 9px; fill: currentColor; flex: none; }
+  .chip.up { color: var(--good); background: var(--good-bg); }
+  .chip.keep { color: var(--warn); background: var(--warn-bg); }
+  .chip.down { color: var(--bad); background: var(--bad-bg); }
+  .chip.flat { color: var(--ink-2); background: var(--neutral-bg); }
+
+  /* Title molds */
+  .molds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 26px; }
+  .mold {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 18px 20px 16px;
+    display: grid;
+    gap: 12px;
+    align-content: start;
+  }
+  .mold h3 { margin: 0; font: 650 12px/1.2 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .formula { font: 620 18px/1.35 var(--sans); color: var(--ink); text-wrap: balance; }
+  .formula b { font-weight: 620; color: var(--accent-ink); }
+  .mold ul { margin: 0; padding: 12px 0 0; list-style: none; display: grid; gap: 9px; border-top: 1px solid var(--rule); }
+  .mold li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: baseline; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+  .mold li .v { font: 600 13px/1 var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); white-space: nowrap; }
+
+  /* Two-list plan */
+  .plan { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+  .plan > div { border-top: 2px solid var(--ink); padding-top: 12px; display: grid; gap: 10px; align-content: start; }
+  .plan h3 { margin: 0; font: 700 15px/1.2 var(--sans); display: flex; align-items: center; gap: 8px; }
+  .plan ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; }
+  .plan li { font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
+  .plan li::marker { color: var(--muted); }
+
+  /* Calendar */
+  .cal { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+  .cal li {
+    display: grid;
+    grid-template-columns: 128px minmax(0, 1fr) 210px;
+    gap: 22px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .when { font: 740 16px/1.15 var(--sans); text-transform: uppercase; letter-spacing: 0.02em; color: var(--ink); }
+  .when small { display: block; margin-top: 5px; font: 400 12.5px/1.3 var(--sans); text-transform: none; letter-spacing: 0; color: var(--muted); }
+  .what h3 { margin: 0 0 4px; font: 650 17px/1.3 var(--sans); text-wrap: balance; }
+  .what p { font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
+  .what .pitch { font-style: italic; color: var(--ink); margin-top: 6px; }
+  .bench { font: 400 13px/1.45 var(--sans); color: var(--muted); display: grid; gap: 6px; align-content: start; }
+  .bench b { font-weight: 650; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .prio { display: inline-flex; align-items: center; gap: 7px; font: 650 12.5px/1 var(--sans); color: var(--ink); }
+  .prio svg { width: 11px; height: 11px; flex: none; }
+
+  /* Stop list */
+  .stop { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; border-top: 2px solid var(--ink); }
+  .stop li { padding: 14px 0; border-bottom: 1px solid var(--rule); display: grid; gap: 4px; }
+  .stop h3 { margin: 0; font: 650 16px/1.3 var(--sans); }
+  .stop p { font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+
+  footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--rule-strong); display: grid; gap: 8px; }
+  footer p { font: 400 13px/1.55 var(--sans); color: var(--muted); max-width: 100ch; }
+
+  @media (max-width: 820px) {
+    .mast { grid-template-columns: minmax(0, 1fr); }
+    .molds, .plan, .stop { grid-template-columns: minmax(0, 1fr); }
+    .cal li { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  }
+
+  /* Barra de Bloomberg Línea y tipografía de la casa */
+  .bl-bar { background: var(--bar-bg); color: var(--bar-ink); border-bottom: 1px solid var(--bar-rule); }
+  .bl-bar-in { max-width: 1100px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 44px); }
+  .bl-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; padding-block: 16px 14px; }
+  .bl-mark { font: 700 clamp(22px, 2.8vw, 30px)/1 var(--sans); letter-spacing: -0.025em; color: var(--bar-ink); white-space: nowrap; }
+  .bl-mark span { color: var(--bar-accent); }
+  .bl-tag { font: 600 11.5px/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--bar-muted); }
+  .bl-nav { display: flex; gap: 24px; overflow-x: auto; padding-block: 11px 12px; border-top: 1px solid var(--bar-rule); scrollbar-width: none; }
+  .bl-nav::-webkit-scrollbar { display: none; }
+  .bl-nav a { color: var(--bar-ink); text-decoration: none; font: 500 14px/1.2 var(--sans); white-space: nowrap; }
+  .bl-nav a:hover { color: var(--bar-accent); }
+  .bl-nav a:focus-visible { outline: 2px solid var(--bar-accent); outline-offset: 3px; border-radius: 2px; }
+  .kicker, .eyebrow { font: 700 12px/1.2 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); }
+  h1 { font-family: var(--sans); font-weight: 600; font-size: clamp(34px, 5vw, 54px); line-height: 1.04; letter-spacing: -0.015em; color: var(--ink); max-width: 22ch; }
+  h2 { font-family: var(--sans); font-weight: 600; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); }
+  .lede { font-family: var(--sans); font-size: clamp(18px, 1.9vw, 21px); line-height: 1.45; color: var(--ink-2); }
+  .byline { margin-top: 16px; font: 400 14px/1.4 var(--sans); color: var(--muted); max-width: none; }
+  .byline b { font-weight: 700; color: var(--ink); }
+  .bezel { height: 4px; margin-top: 28px; background: linear-gradient(90deg, var(--accent) 0 88px, var(--ink) 88px 100%); }
+
+  /* Guía de la semana */
+  .plan + .plan { margin-top: 16px; }
+  .sub-h { margin: 34px 0 14px; font: 700 13px/1.2 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+  .semana { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .semana article { border-top: 2px solid var(--ink); padding-top: 12px; display: grid; gap: 8px; align-content: start; }
+  .semana p { font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+  .semana .lbl { font: 700 12px/1.2 var(--sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-ink); }
+  .semana .pitch { font: 600 17px/1.35 var(--sans); color: var(--ink); text-wrap: balance; }
+  .semana .ev { font: 400 13px/1.45 var(--sans); color: var(--muted); }
+  .probar { margin: 0; padding-left: 18px; display: grid; gap: 8px; max-width: 80ch; }
+  .probar li { font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
+  .probar li::marker { color: var(--muted); }
+  @media (max-width: 820px) { .semana { grid-template-columns: minmax(0, 1fr); } }
+
+  /* Impacto de las propuestas (acotado a .imp) */
+  .imp .tiles { margin: 30px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+  .imp .tiles > div { padding: 14px 18px 14px 0; border-bottom: 1px solid var(--rule); }
+  .imp .tiles dt { font: 600 11px/1.3 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .imp .tiles dd { margin: 6px 0 0; font: 700 30px/1.05 var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); }
+  .imp .tiles dd small { display: block; margin-top: 5px; font: 400 13px/1.4 var(--sans); color: var(--muted); }
+  /* Chart */
+  .imp .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font: 500 13px/1.3 var(--sans); color: var(--ink-2); margin-bottom: 12px; }
+  .imp .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .imp .legend i { display: inline-block; width: 14px; height: 14px; border-radius: 3px; }
+  .imp .legend .k-prop { background: var(--c-prop); }
+  .imp .legend .k-rev { background: var(--c-rev); }
+  .imp .legend .k-rest { background: var(--c-rest); }
+  .imp .legend .k-ma { width: 18px; height: 2px; background: var(--ink); border-radius: 0; }
+  .imp .legend .k-seo { background: var(--c-prop); }
+  .imp #chart .b-rest { fill: var(--c-rest); fill-opacity: .55; }
+  .imp #chart .b-seo { fill: var(--c-prop); fill-opacity: .9; }
+  .imp #chart .m-seo { fill: var(--c-prop); }
+  .imp #chart .ma { stroke: var(--ink); stroke-opacity: .45; }
+  .imp .chart-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 10px 8px; position: relative; }
+  .imp #chart { position: relative; width: 100%; min-height: 300px; touch-action: pan-y; }
+  .imp #chart svg { display: block; overflow: visible; }
+  .imp #chart .tick { font: 500 11.5px var(--sans); fill: var(--muted); font-variant-numeric: tabular-nums; }
+  .imp #chart .evnum { font: 700 11px var(--sans); fill: var(--ink); }
+  .imp #chart .anno { font: 500 11.5px var(--sans); fill: var(--muted); }
+  .imp .tip { position: absolute; top: 0; left: 0; pointer-events: none; background: var(--surface); border: 1px solid var(--rule-strong); border-radius: 6px; padding: 9px 11px; font: 400 12.5px/1.45 var(--sans); color: var(--ink-2); box-shadow: 0 6px 18px rgba(0,0,0,.12); min-width: 190px; }
+  .imp .tip[hidden] { display: none; }
+  .imp .tip b { color: var(--ink); font-weight: 650; }
+  .imp .tip .row { display: grid; grid-template-columns: 12px 1fr auto; gap: 8px; align-items: center; font-variant-numeric: tabular-nums; }
+  .imp .tip .row i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .imp .tip .tot { border-top: 1px solid var(--rule); margin-top: 5px; padding-top: 5px; }
+  .imp .events { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 10px 26px; }
+  .imp .events li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; align-items: start; font: 400 14px/1.45 var(--sans); color: var(--ink-2); }
+  .imp .events .num { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--ink); font: 700 11.5px var(--sans); color: var(--ink); background: var(--surface); }
+  .imp .events b { color: var(--ink); font-weight: 650; }
+
+  /* Tables */
+  .imp .table-wrap { overflow-x: auto; border-top: 2px solid var(--ink); }
+  .imp table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 14.5px; }
+  .imp thead th { font: 600 11px/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 12px 14px 10px 0; border-bottom: 1px solid var(--rule-strong); vertical-align: bottom; }
+  .imp tbody th, .imp tbody td { padding: 13px 14px 13px 0; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+  .imp th.num, .imp td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .imp tbody th { font-weight: 650; color: var(--ink); }
+  .imp tr.muted th, .imp tr.muted td { color: var(--muted); background: var(--neutral-bg); }
+  .imp tr.muted th { padding-left: 10px; }
+  .imp .t-ab { min-width: 560px; }
+  .imp .t-ab thead th.num { white-space: normal; }
+  .imp .t-ab tbody th { white-space: nowrap; }
+  .imp .t-ab tbody th .sub { display: block; margin-top: 3px; font-weight: 400; font-size: 12.5px; }
+  .imp .t-prop { min-width: 900px; }
+  .imp .t-prop td.when { font: 650 14px/1.2 var(--sans); white-space: nowrap; color: var(--ink); }
+  .imp .t-prop td.when small { display: block; margin-top: 4px; font-weight: 400; font-size: 12.5px; color: var(--muted); }
+  .imp .tipo { display: inline-flex; align-items: center; gap: 7px; font: 650 12px/1 var(--sans); color: var(--ink); }
+  .imp .tipo i { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
+  .imp .tipo.k-e i { background: var(--c-prop); }
+  .imp .tipo.k-r i { background: var(--c-rev); }
+  .imp .tipo.k-a i { background: transparent; border: 2px solid var(--c-rev); }
+  .imp .que { margin-top: 6px; font: 400 14px/1.45 var(--serif); color: var(--ink-2); max-width: 36ch; }
+  .imp .nota { font: 500 14.5px/1.4 var(--sans); color: var(--ink); max-width: 44ch; }
+  .imp .meta { display: block; margin-top: 4px; font: 400 12.5px/1.3 var(--sans); color: var(--muted); }
+  .imp td.res { min-width: 10em; max-width: 13em; }
+  .imp td.res .big { display: block; font: 700 18px/1.1 var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); }
+  .imp td.res small { display: block; margin-top: 3px; font: 400 12.5px/1.35 var(--sans); color: var(--muted); }
+  .imp .t-prop td:nth-child(2) { min-width: 14em; }
+  .imp .rel { display: inline-flex; align-items: center; font: 650 12.5px/1 var(--sans); padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+  .imp .rel.hi { color: var(--good); background: var(--good-bg); }
+  .imp .rel.up { color: var(--good); background: transparent; border: 1.5px solid var(--good); }
+  .imp .rel.eq { color: var(--ink-2); background: var(--neutral-bg); }
+  .imp .rel.lo { color: var(--bad); background: var(--bad-bg); }
+  .imp .rel.na { color: var(--muted); background: transparent; border: 1px dashed var(--rule-strong); }
+
+  .imp .compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .imp .compare > div { border-top: 2px solid var(--ink); padding-top: 12px; display: grid; gap: 8px; align-content: start; }
+  .imp .compare h3 { margin: 0; font: 650 12px/1.2 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .imp .vs { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; font-family: var(--sans); }
+  .imp .vs .a { font: 700 34px/1 var(--sans); color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+  .imp .vs .b { font: 700 34px/1 var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .imp .vs span { font: 400 13.5px/1.35 var(--sans); color: var(--muted); }
+  .imp .compare p { font-size: 15.5px; color: var(--ink-2); }
+  .imp blockquote { margin: 26px 0 0; padding: 4px 0 4px 18px; border-left: 3px solid var(--accent); max-width: 60ch; }
+  .imp blockquote p { font: italic 400 20px/1.45 var(--serif); color: var(--ink); }
+  .imp blockquote footer { margin-top: 6px; font: 400 13px/1.4 var(--sans); color: var(--muted); }
+
+  .imp .caveats { margin: 0; padding-left: 18px; display: grid; gap: 10px; max-width: 80ch; }
+  .imp .caveats li { font-size: 15.5px; line-height: 1.55; color: var(--ink-2); }
+  .imp .caveats li::marker { color: var(--muted); }
+
+
+  @media (max-width: 820px) {
+    .imp .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .imp .compare { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .imp .t-prop, .imp .t-prop tbody { display: block; min-width: 0; }
+    .imp .t-prop thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .imp .t-prop tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .imp .t-prop tbody td { display: block; padding: 0; border: 0; }
+    .imp .t-prop td.when { grid-column: 1 / -1; display: flex; gap: 8px; align-items: baseline; }
+    .imp .t-prop td.when small { display: inline; margin: 0; }
+    .imp .t-prop td:nth-child(2), .imp .t-prop td:nth-child(3) { grid-column: 1 / -1; }
+    .imp .t-prop .que, .imp .t-prop .nota { max-width: none; }
+  }
+  .imp .tiles { margin: 4px 0 30px; }
+  .imp tbody th, .imp tbody td { vertical-align: top; }
+  .imp .t-prop td.when, .imp .t-prop td.when small { text-transform: none; letter-spacing: 0; }
+  .imp blockquote footer { border: 0; padding: 0; display: block; }
+  .imp .legend .k-ref { width: 1px; height: 16px; background: var(--ink); border-radius: 0; }
+  .imp .nb { margin: 0 0 30px; }
+  .imp .nb-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+  .imp .nb-row { display: grid; grid-template-columns: minmax(0, 17em) minmax(0, 1fr) 9.5em; gap: 6px 16px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+  .imp .nb-lab { font: 600 14px/1.3 var(--sans); color: var(--ink); }
+  .imp .nb-lab small { display: block; margin-top: 2px; font: 400 12.5px/1.3 var(--sans); color: var(--muted); }
+  .imp .nb .bar { height: 16px; }
+  .imp .nb .bar .fill.k-e { background: var(--c-prop); }
+  .imp .nb .bar .fill.k-r { background: var(--c-rev); }
+  .imp .nb-val { font: 700 15px/1.1 var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); text-align: right; white-space: nowrap; }
+  .imp .nb-val small { display: block; margin-top: 2px; font: 400 12px/1.3 var(--sans); color: var(--muted); }
+  .imp .nb figcaption { margin-top: 10px; }
+  .imp .t-sem { min-width: 560px; }
+  .imp .t-vida { min-width: 640px; }
+  .imp .t-vida thead th.num { white-space: normal; }
+  .imp .t-vida tbody th { font: 500 14px/1.35 var(--sans); color: var(--ink); max-width: 30em; }
+  .imp .t-vida tbody th small { display: block; margin-top: 3px; font: 400 12.5px/1.3 var(--sans); color: var(--muted); }
+  .imp .t-vida td small { color: var(--muted); font-size: 12.5px; }
+  .imp .t-vida tr.top th, .imp .t-vida tr.top td { background: var(--accent-track); }
+  .imp .legend .k-a { background: transparent; border: 2px solid var(--c-rev); box-sizing: border-box; }
+  .imp .nb .bar .fill.k-a { background: transparent; border: 2px solid var(--c-rev); box-sizing: border-box; }
+  .imp .t-sem thead th.num { white-space: normal; }
+  .imp .t-sem tbody th { white-space: nowrap; }
+  .imp .t-sem tr.top th, .imp .t-sem tr.top td { font-weight: 650; color: var(--ink); background: var(--accent-track); }
+  .parte { margin: clamp(52px, 7vw, 80px) 0 0; padding-top: 12px; border-top: 4px solid var(--ink); display: flex; align-items: center; gap: 10px; font: 700 13px/1.2 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); max-width: none; }
+  .parte span { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--bar-bg); font-size: 12.5px; letter-spacing: 0; }
+  .parte + section, .parte + .imp > section:first-child { margin-top: 28px; }
+  @media (max-width: 640px) {
+    .imp .nb-row { grid-template-columns: minmax(0, 1fr) auto; }
+    .imp .nb-lab { grid-column: 1 / -1; }
+  }
+
+.foto{width:100%;border-collapse:collapse;margin:18px 0 6px}
+.foto th,.foto td{padding:9px 12px;text-align:right;border-bottom:1px solid #e6e6e6;font-variant-numeric:tabular-nums}
+.foto thead th{text-align:right;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#6b6b6b}
+.foto tbody th{text-align:left;font-weight:600}
+.foto .tot th,.foto .tot td{border-top:2px solid #191919;font-weight:700}
+.sube{color:#1d7a37;font-weight:700}.baja{color:#b3261e;font-weight:700}
+.notas{width:100%;border-collapse:collapse;margin:14px 0}
+.notas th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#6b6b6b;text-align:left;
+ padding:6px 10px;border-bottom:1px solid #191919}
+.notas th:not(:first-child){text-align:right}
+.notas td{padding:9px 10px;border-bottom:1px solid #eee;vertical-align:top}
+.notas td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.notas td:nth-child(3){text-align:right;font-variant-numeric:tabular-nums;color:#6b6b6b;white-space:nowrap}
+.notas .tit{white-space:normal;line-height:1.35;max-width:38em}
+.notas .meta{display:block;font-size:12px;color:#6b6b6b;margin-top:3px}
+.amp{font-size:11px;background:#f0f0f0;padding:1px 5px;border-radius:3px;color:#6b6b6b;white-space:nowrap}
+.clave{border-left:3px solid #36BF58;background:#f7fbf8;padding:11px 14px;margin:14px 0 16px;font-weight:600}
+.cal{width:100%;border-collapse:collapse;margin:14px 0}
+.cal th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#6b6b6b;text-align:left;
+ padding:6px 10px;border-bottom:1px solid #191919}
+.cal td{padding:10px;border-bottom:1px solid #eee;vertical-align:top;line-height:1.4}
+.cal td:first-child{font-weight:600;white-space:nowrap;width:9em}
+ul.reco{margin:12px 0;padding-left:0;list-style:none}
+ul.reco li{margin:0 0 13px;padding-left:1.5em;position:relative;line-height:1.5}
+ul.reco li:before{content:'';position:absolute;left:0;top:.52em;width:7px;height:7px;background:#36BF58;border-radius:50%}
+.pie-doc{margin-top:34px;padding-top:16px;border-top:1px solid #e6e6e6;font-size:13px;color:#6b6b6b}
+.pie-doc a{color:#191919;font-weight:600}
+@media (max-width:620px){.notas .tit{max-width:none}.cal td:first-child{width:auto}}
+</style>
+</head>
+<body>
+<header class="mast">
+<div><p class="kicker">Bloomberg Línea · SEO</p><h1>Qué le rinde a<br>Isaac Garrido</h1></div>
+<div><p class="lede">Estilo de vida. Es quien más tráfico mueve del equipo y el que más cae, porque la quincena anterior tuvo dos virales que no se repiten. Su base, sin virales, está intacta.</p>
+<p class="byline">Por <b>SEO</b> · quincena del 19 de septiembre al 3 de octubre de 2026</p></div>
+</header>
+<section><h2>La quincena en una tabla</h2><p class='clave'>Cae un 61%, pero 44.946 de los 59.276 clics de la quincena anterior fueron dos notas virales.</p><table class='foto'><thead><tr><th></th><th>4 – 18 sep</th><th>19 sep – 3 oct</th><th>Cambio</th></tr></thead><tbody><tr><th>Discover</th><td>33.058</td><td>19.108</td><td class='baja'>-42%</td></tr><tr><th>Búsqueda de Google</th><td>26.218</td><td>4.170</td><td class='baja'>-84%</td></tr><tr class='tot'><th>Total</th><td>59.276</td><td>23.278</td><td class='baja'>-61%</td></tr><tr><th>Notas publicadas</th><td>28</td><td>25</td><td class='baja'>-11%</td></tr></tbody></table><p class='pie'>El Nokia 1100 hizo 28.839 clics en Discover y la foto de los 80 en ChatGPT, 16.107 en la Búsqueda. Quitando el viral de cada quincena, la comparación es 14.330 contra 12.186: un 15% menos, no un 61%. Y dentro de esos 14.330 están los 7.770 del Apple Event, que tampoco vuelven.</p></section>
+<section><h2>Qué le sirvió</h2><p class='clave'>Sacó su propio viral esta quincena: las canciones de mariachi, 11.092 clics. Es el tercero que consigue en dos meses.</p><p>El ranking de canciones, los relojes de lujo comparados y los perfumes son su molde y le funcionan sin depender de un lanzamiento. El Nokia 1100, además, le sigue dando 3.204 clics quince días después: de las pocas notas del equipo que no se apaga en dos días.</p><h3>En Discover</h3><table class='notas'><thead><tr><th>Nota</th><th>Clics</th></tr></thead><tbody><tr><td class='tit'>Las 10 mejores canciones de mariachi de la historia, según Billboard<span class='meta'>Estilo de vida · 2026-10-02</span></td><td class='n'>11.092</td></tr><tr><td class='tit'>El Nokia 1100, el teléfono más vendido de la historia, vuelve a ser tendencia en 2026: precio y dónde comprarlo<span class='meta'>Estilo de vida · 2026-09-16</span></td><td class='n'>3.204</td></tr><tr><td class='tit'>Rolex vs. Cartier: cuánto cuestan sus relojes más emblemáticos y cuáles son los modelos más buscados<span class='meta'>Estilo de vida · 2026-09-26</span></td><td class='n'>2.671</td></tr><tr><td class='tit'>Chanel, Dior, Creed y más: 10 perfumes y lociones para regalar en Amor y Amistad 2026<span class='meta'>Estilo de vida · 2026-09-19</span></td><td class='n'>1.063</td></tr><tr><td class='tit'>Lamine Yamal luce reloj Richard Mille y bolso Chanel: ¿cuánto cuesta el look del futbolista?<span class='meta'>Estilo de vida · 2026-09-25</span></td><td class='n'>234</td></tr><tr><td class='tit'>Las mejores aerolíneas de América Latina en 2026 son LATAM, Copa y JetSMART, según los premios Skytrax<span class='meta'>Estilo de vida · 2026-09-21</span></td><td class='n'>168</td></tr><tr><td class='tit'>EA Sports FC 27: cuánto cuesta el paquete con Nintendo Switch 2 y dónde comprarlo<span class='meta'>Estilo de vida · 2026-09-28</span></td><td class='n'>150</td></tr><tr><td class='tit'>¿Cuánto dinero tiene Luis Miguel? Así es la fortuna del cantante que regresará con un tour en 2027<span class='meta'>Estilo de vida · 2026-09-22</span></td><td class='n'>81</td></tr></tbody></table><h3>En la Búsqueda de Google</h3><table class='notas'><thead><tr><th>Nota</th><th>Clics</th><th>Impresiones</th></tr></thead><tbody><tr><td class='tit'>Lego revela su primer set de Dragon Ball: cuándo sale y cuánto cuesta<span class='meta'>Estilo de vida · 2026-09-29</span></td><td class='n'>859</td><td>24.924</td></tr><tr><td class='tit'>¿Quién era Presley Gerber, el hijo de Cindy Crawford que murió a los 27 años?<span class='meta'>Estilo de vida · 2026-09-21</span></td><td class='n'>503</td><td>11.465</td></tr><tr><td class='tit'>Preventa de ‘Avengers: Doomsday’ tumbó las apps de Cinépolis y Cinemex a tres meses del estreno en México<span class='meta'>Estilo de vida · 2026-09-28</span></td><td class='n'>367</td><td>87.084</td></tr><tr><td class='tit'>El Nokia 1100, el teléfono más vendido de la historia, vuelve a ser tendencia en 2026: precio y dónde comprarlo<span class='meta'>Estilo de vida · 2026-09-16</span></td><td class='n'>265</td><td>54.869</td></tr><tr><td class='tit'>‘Resident Evil: Noche Cero’ revive en el cine y rompe récord de preventas con US$8,8 millones<span class='meta'>Estilo de vida · 2026-09-18</span></td><td class='n'>244</td><td>29.313</td></tr><tr><td class='tit'>¿Cuánto dinero tiene Luis Miguel? Así es la fortuna del cantante que regresará con un tour en 2027<span class='meta'>Estilo de vida · 2026-09-22</span></td><td class='n'>186</td><td>13.664</td></tr><tr><td class='tit'>Los premios del China Open 2026: más de US$13 millones<span class='meta'>Línea deportiva · 2026-09-30</span></td><td class='n'>169</td><td>39.448</td></tr><tr><td class='tit'>¿Cuándo sale EA FC 27 y cuánto costará el nuevo juego de fútbol?<span class='meta'>Estilo de vida · 2026-09-17</span></td><td class='n'>162</td><td>72.912</td></tr></tbody></table></section>
+<section><h2>Qué no le sirvió</h2><p class='clave'>Tiene 333.679 impresiones en sus ocho mejores notas de Búsqueda y solo 2.755 clics: un 0,83%.</p><p>Ahí está su mayor pérdida y no es un problema de temas, es de titulación. La preventa de Avengers tiene 87.084 impresiones y 367 clics; «Cuándo sale EA FC 27», 72.912 y 162; el Nokia en la Búsqueda, 54.869 y 265. Google le está ofreciendo la audiencia y el titular no la recoge.</p><h3>Lo que rendía en la quincena anterior y ya no</h3><table class='notas'><thead><tr><th>Nota</th><th>Clics 4–18 sep</th></tr></thead><tbody><tr><td class='tit'>El Nokia 1100, el teléfono más vendido de la historia, vuelve a ser tendencia en 2026: precio y dónde comprarlo<span class='meta'>Estilo de vida · 2026-09-16</span></td><td class='n'>28.839</td></tr><tr><td class='tit'>Casio renueva uno de sus clásicos con inspiración en el matcha<span class='meta'>Estilo de vida · 2026-09-06</span></td><td class='n'>2.250</td></tr><tr><td class='tit'>iPhone Duo, Galaxy Z Fold 8 y Pixel Fold: cuál tiene menor precio en 2026<span class='meta'>Estilo de vida · 2026-09-09</span></td><td class='n'>378</td></tr><tr><td class='tit'>¿Cómo crear tu foto de los 80 en ChatGPT? Estos son los pasos<span class='meta'>Estilo de vida · 2026-09-07</span></td><td class='n'>353</td></tr><tr><td class='tit'>Serie de Don Ramón y película de El Chapulín Colorado, los nuevos proyectos del legado de Chespirito<span class='meta'>Estilo de vida · 2026-09-14</span></td><td class='n'>312</td></tr><tr><td class='tit'>De Cher a Madonna: la fortuna que Bob Mackie construyó vistiendo a las grandes estrellas de Hollywood<span class='meta'>Estilo de vida · 2026-09-14</span></td><td class='n'>197</td></tr><tr><td class='tit'>“GTA 6: The Album” llegará en versiones físicas: cuándo sale el soundtrack del juego<span class='meta'>Estilo de vida · 2026-09-17</span></td><td class='n'>106</td></tr></tbody></table><table class='notas'><thead><tr><th>Nota</th><th>Clics 4–18 sep</th></tr></thead><tbody><tr><td class='tit'>¿Cómo crear tu foto de los 80 en ChatGPT? Estos son los pasos<span class='meta'>Estilo de vida · 2026-09-07</span></td><td class='n'>16.107</td></tr><tr><td class='tit'>A horas del Apple Event, filtran los posibles precios del iPhone 18 Pro y el modelo Ultra<span class='meta'>Tecnología · 2026-09-07</span></td><td class='n'>4.126</td></tr><tr><td class='tit'>Apple Event 2026: horario y dónde ver la presentación del iPhone 18 Pro en México, Argentina, Colombia y más<span class='meta'>Tecnología · 2026-09-07</span></td><td class='n'>1.512</td></tr><tr><td class='tit'>Qué confirmó Apple del iPhone 18 Pro, Pro Max y el plegable: precio, cámara y chip reales vs. lo filtrado<span class='meta'>Tecnología · 2026-09-09</span></td><td class='n'>1.078</td></tr><tr><td class='tit'>Apple divide en dos sus lanzamientos: el iPhone 18, el iPhone Air 2 y el 18e llegarían hasta 2027<span class='meta'>Tecnología · 2026-09-08</span></td><td class='n'>757</td></tr><tr><td class='tit'>¿Cuándo sale EA FC 27 y cuánto costará el nuevo juego de fútbol?<span class='meta'>Estilo de vida · 2026-09-17</span></td><td class='n'>483</td></tr><tr><td class='tit'>iOS 27 llega hoy: cómo instalarlo y qué modelos de iPhone son compatibles<span class='meta'>Tecnología · 2026-09-14</span></td><td class='n'>297</td></tr><tr><td class='tit'>iPhone Duo, Galaxy Z Fold 8 y Pixel Fold: cuál tiene menor precio en 2026<span class='meta'>Estilo de vida · 2026-09-09</span></td><td class='n'>233</td></tr></tbody></table></section>
+<section><h2>Qué le recomendamos</h2><p class='clave'>Tres retítulos en notas que ya tiene publicadas valen más que cualquier tema nuevo de la quincena.</p><ul class='reco'><li><b>Sus tres retítulos de más valor, por orden.</b> La preventa de Avengers (87.084 impresiones, 0,42%), «Cuándo sale EA FC 27» (72.912, 0,22%) y el Nokia 1100 en la Búsqueda (54.869, 0,48%). La demanda ya está medida: falta recogerla.</li><li><b>Su molde propio no necesita lanzamientos.</b> Rankings de canciones, relojes de lujo comparados y perfumes: tres notas, 14.826 clics en Discover, sin depender de que Apple presente nada.</li><li><b>El Nokia 1100 es su página más duradera.</b> 28.839 clics la quincena pasada y 3.204 en esta. Conviene mantenerla y no competir contra ella con una nota nueva del mismo tema.</li><li><b>Bajó de 6 notas de Tecnología a 2</b>, igual que Cuevas y Fátima. En su caso el Apple Event ya había pasado, así que la decisión fue correcta: su tecnología sin evento rinde poco.</li></ul></section>
+<section><h2>A qué estar pendiente del 5 al 19 de octubre</h2><p class='clave'>El Nobel y el desfile de Victoria's Secret son las dos citas que ya cubrió en esta misma quincena el año pasado.</p><table class='cal'><thead><tr><th>Fecha o tema</th><th>Por qué, con su cifra</th></tr></thead><tbody><tr><td>Premios Nobel</td><td><b>2 notas</b> en esta misma quincena de 2025. Se anuncian la primera semana de octubre.</td></tr><tr><td>Desfile de Victoria's Secret</td><td><b>2 notas</b> en esta quincena de 2025, su otra cita fija de octubre.</td></tr><tr><td>Estrenos de videojuegos y cine</td><td>Es donde tiene la demanda sin recoger: Avengers, EA FC 27 y Resident Evil suman <b>189.309 impresiones</b> y 773 clics.</td></tr><tr><td>Relojes y lujo</td><td>«Rolex contra Cartier» hizo <b>2.671 clics</b> en Discover sin ningún evento detrás. Son 63 notas suyas de archivo.</td></tr></tbody></table></section>
+<footer class='pie-doc'><p>Esta página se actualiza cada domingo.</p></footer>
+</body>
+</html>
